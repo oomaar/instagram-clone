@@ -1,3 +1,4 @@
+import { Home } from "../../Components";
 import { HeadTag } from "../../Global";
 
 export const HomeContainer = () => {
@@ -5,7 +6,7 @@ export const HomeContainer = () => {
         <div>
             <HeadTag title="instagram" />
 
-            <h1>Home page</h1>
+            <Home />
         </div>
     );
 };
