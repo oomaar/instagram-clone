@@ -1,10 +1,14 @@
+import { ThemeProvider } from "styled-components";
 import { Layout } from "../Global";
+import { lightTheme } from "../Global/GlobalStyle";
 
 const App = ({ Component, pageProps }) => {
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider theme={lightTheme}>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </ThemeProvider>
     );
 };
 
