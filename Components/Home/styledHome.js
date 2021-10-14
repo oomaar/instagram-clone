@@ -42,7 +42,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid hsla(0, 0%, 0%, 0.08);
+  border: 1px solid ${({ theme }) => theme.colors.border};
   width: 100%;
   padding: 0.5rem;
 
@@ -97,7 +97,6 @@ export const InputContainer = styled.div`
   border: 1px solid whitesmoke;
   position: relative;
   height: 45px;
-  /* width: 300px; */
   border-radius: 0.3rem;
   padding: 0.3rem 1rem;
 
@@ -107,12 +106,12 @@ export const InputContainer = styled.div`
   }
 
   :focus-within {
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.15);
   }
 `;
 
 export const LoginButton = styled.button`
-  background-color: hsla(204, 100%, 59%, 0.5);
+  background-color: ${({ theme }) => theme.colors.button};
   color: #fff;
   align-self: center;
   border: 0;
@@ -131,7 +130,7 @@ export const SpanTag = styled.span`
       content: "";
       width: 130px;
       height: 2px;
-      background-color: hsla(0 , 100%, 0%, 0.05);
+      background-color: ${({ theme }) => theme.colors.line};
       position: absolute;
       top: 7px;
       left: -140px;
@@ -146,7 +145,7 @@ export const SpanTag = styled.span`
       content: "";
       width: 130px;
       height: 2px;
-      background-color: hsla(0 , 100%, 0%, 0.05);
+      background-color: ${({ theme }) => theme.colors.line};
       position: absolute;
       top: 7px;
       margin-left: 10px;
@@ -176,7 +175,7 @@ export const FacebookLink = styled.button`
   gap: 0.5rem;
 
   svg {
-    color: hsl(204, 100%, 59%);
+    color: ${({ theme }) => theme.colors.buttonAlt};
   }
 `;
 
@@ -207,7 +206,7 @@ export const SignupContainer = styled.div`
 export const SignupText = styled.p``;
 
 export const SignupButton = styled.button`
-    color: hsl(204, 100%, 59%);
+    color: ${({ theme }) => theme.colors.buttonAlt};
     font-weight: 600;
     background: transparent;
     outline: 0;
