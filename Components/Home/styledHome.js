@@ -196,22 +196,18 @@ export const SignupContainer = styled.div`
   padding: 0.5rem 1rem;
   width: 100%;
 
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.buttonAlt};
+    font-weight: 600;
+    background: transparent;
+  }
+
   @media screen and (max-width: 400px) {
     border: 0;
     padding: 0;
     gap: 0;
   }
-`;
-
-export const SignupText = styled.p``;
-
-export const SignupButton = styled.button`
-    color: ${({ theme }) => theme.colors.buttonAlt};
-    font-weight: 600;
-    background: transparent;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
 `;
 
 export const GetAppContainer = styled.div`

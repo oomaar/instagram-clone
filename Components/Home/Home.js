@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FaFacebookF, FaApple, FaGooglePlay } from "react-icons/fa"
+import { FaFacebookF, FaApple, FaGooglePlay } from "react-icons/fa";
+import NextLink from "next/link";
 import {
     Container,
     ImageContainer,
@@ -15,8 +16,6 @@ import {
     FacebookLink,
     ResetLink,
     SignupContainer,
-    SignupText,
-    SignupButton,
     GetAppContainer,
     ButtonsContainer,
     DownloadButton,
@@ -56,8 +55,8 @@ export const Home = () => {
                 </Form>
 
                 <SignupContainer>
-                    <SignupText>Don't have an account?</SignupText>
-                    <SignupButton>Sign Up</SignupButton>
+                    <p>Don't have an account?</p>
+                    <NextLink href="/signup">Sign Up</NextLink>
                 </SignupContainer>
 
                 <GetAppContainer>
