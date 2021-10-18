@@ -1,3 +1,5 @@
+import { Footer, Home } from "../../Components";
+
 import {
     Container,
 } from "./styledLoginContainer";
@@ -5,7 +7,8 @@ import {
 export const LoginContainer = () => {
     return (
         <Container>
-            Login Container
+            <Home />
+            <Footer />
         </Container>
     );
 };

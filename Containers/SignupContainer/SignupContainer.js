@@ -4,6 +4,7 @@ import { FaFacebookF, FaApple, FaGooglePlay } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { useAuth } from "../../Context/AuthContext";
 import { HeadTag } from "../../Global";
+import { Footer } from "../../Components";
 import {
     Container,
     FormContainer,
@@ -50,23 +51,24 @@ export const SignupContainer = () => {
     };
 
     return (
-        <Container>
-            <HeadTag title="Instagram | Signup" />
-            <FormContainer>
-                <Form onSubmit={handleSubmit}>
-                    <Logo>
-                        <Image src="/logo.png" width="200" height="100" objectFit="contain" />
-                    </Logo>
+        <div>
+            <Container>
+                <HeadTag title="Instagram | Signup" />
+                <FormContainer>
+                    <Form onSubmit={handleSubmit}>
+                        <Logo>
+                            <Image src="/logo.png" width="200" height="100" objectFit="contain" />
+                        </Logo>
 
-                    <FormOptions>
-                        <FacebookLink>
-                            <FaFacebookF />
-                            Log in with Facebook
-                        </FacebookLink>
-                    </FormOptions>
-                    <SpanTag>OR</SpanTag>
-                    {error && <p>{error}</p>}
-                    {/* <InputContainer>
+                        <FormOptions>
+                            <FacebookLink>
+                                <FaFacebookF />
+                                Log in with Facebook
+                            </FacebookLink>
+                        </FormOptions>
+                        <SpanTag>OR</SpanTag>
+                        {error && <p>{error}</p>}
+                        {/* <InputContainer>
                         <Input type="text" required />
                         <InputLabel><span>Full Name</span></InputLabel>
                     </InputContainer>
@@ -74,53 +76,56 @@ export const SignupContainer = () => {
                         <Input type="text" required />
                         <InputLabel><span>Username</span></InputLabel>
                     </InputContainer> */}
-                    <InputContainer>
-                        <Input
-                            type="email"
-                            required
-                            ref={emailRef}
-                        />
-                        <InputLabel><span>Email</span></InputLabel>
-                    </InputContainer>
-                    <InputContainer>
-                        <Input
-                            type="password"
-                            required
-                            ref={passwordRef}
-                        />
-                        <InputLabel><span>Password</span></InputLabel>
-                    </InputContainer>
-                    <InputContainer>
-                        <Input
-                            type="password"
-                            required
-                            ref={passwordConfirmRef}
-                        />
-                        <InputLabel><span>Confirm Password</span></InputLabel>
-                    </InputContainer>
-                    <SignupButton disabled={loading} type="submit">Sign up</SignupButton>
-                    <SignupText>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</SignupText>
-                </Form>
+                        <InputContainer>
+                            <Input
+                                type="email"
+                                required
+                                ref={emailRef}
+                            />
+                            <InputLabel><span>Email</span></InputLabel>
+                        </InputContainer>
+                        <InputContainer>
+                            <Input
+                                type="password"
+                                required
+                                ref={passwordRef}
+                            />
+                            <InputLabel><span>Password</span></InputLabel>
+                        </InputContainer>
+                        <InputContainer>
+                            <Input
+                                type="password"
+                                required
+                                ref={passwordConfirmRef}
+                            />
+                            <InputLabel><span>Confirm Password</span></InputLabel>
+                        </InputContainer>
+                        <SignupButton disabled={loading} type="submit">Sign up</SignupButton>
+                        <SignupText>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</SignupText>
+                    </Form>
 
-                <SignContainer>
-                    <p>Have an account?</p>
-                    <NextLink href="/">Log In</NextLink>
-                </SignContainer>
+                    <SignContainer>
+                        <p>Have an account?</p>
+                        <NextLink href="/login">Log In</NextLink>
+                    </SignContainer>
 
-                <GetAppContainer>
-                    <p>Get the app.</p>
-                    <ButtonsContainer>
-                        <DownloadButton>
-                            <FaApple />
-                            <p><span>Download on the</span><br /> App Store</p>
-                        </DownloadButton>
-                        <DownloadButton>
-                            <FaGooglePlay />
-                            <p><span>GET IT ON</span><br /> Google Play</p>
-                        </DownloadButton>
-                    </ButtonsContainer>
-                </GetAppContainer>
-            </FormContainer>
-        </Container>
+                    <GetAppContainer>
+                        <p>Get the app.</p>
+                        <ButtonsContainer>
+                            <DownloadButton>
+                                <FaApple />
+                                <p><span>Download on the</span><br /> App Store</p>
+                            </DownloadButton>
+                            <DownloadButton>
+                                <FaGooglePlay />
+                                <p><span>GET IT ON</span><br /> Google Play</p>
+                            </DownloadButton>
+                        </ButtonsContainer>
+                    </GetAppContainer>
+                </FormContainer>
+
+            </Container>
+            <Footer />
+        </div>
     );
 };

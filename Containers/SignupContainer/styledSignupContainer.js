@@ -4,8 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 3.5rem 2rem;
+  padding: 2.5rem 2rem;
 
   @media screen and (max-width: 400px) {
     display: flex;
