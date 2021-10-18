@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { useAuth } from "../../Context/AuthContext";
 import { HeadTag } from "../../Global";
 import { Footer } from "../../Components";
+import { useRouter } from "next/dist/client/router";
 import {
     Container,
     FormContainer,
@@ -31,6 +32,7 @@ export const SignupContainer = () => {
     const { signUp } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -43,6 +45,7 @@ export const SignupContainer = () => {
             setError("");
             setLoading(true);
             await signUp(emailRef.current.value, passwordRef.current.value);
+            router.push("/");
         } catch {
             setError("Failed to Create an account");
         };

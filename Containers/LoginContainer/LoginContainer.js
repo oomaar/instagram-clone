@@ -1,5 +1,4 @@
 import { Footer, Home } from "../../Components";
-
 import {
     Container,
 } from "./styledLoginContainer";

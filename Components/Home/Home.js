@@ -20,8 +20,33 @@ import {
     ButtonsContainer,
     DownloadButton,
 } from "./styledHome";
+import { useRef, useState } from "react";
+import { useAuth } from "../../Context/AuthContext";
+import { useRouter } from "next/dist/client/router";
 
 export const Home = () => {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const { logIn } = useAuth();
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        try {
+            setError("");
+            setLoading(true);
+            await logIn(emailRef.current.value, passwordRef.current.value);
+            router.push("/");
+        } catch {
+            setError("Failed to Sign in");
+        };
+
+        setLoading(false);
+    };
+
     return (
         <Container>
             <ImageContainer>
@@ -29,7 +54,7 @@ export const Home = () => {
             </ImageContainer>
 
             <FormContainer>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Logo>
                         <Image src="/logo.png" width="200" height="100" objectFit="contain" />
                     </Logo>
